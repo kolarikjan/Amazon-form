@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Amazon Ember';
+    src: URL('../fonts/AmazonEmber_Lt.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    src: URL('../fonts/AmazonEmber_Rg.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    src: URL('../fonts/AmazonEmber_RgIt.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Amazon Ember';
+    src: URL('../fonts/AmazonEmber_Bd.ttf') format('truetype');
+    font-weight: 600;
+}
