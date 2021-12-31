@@ -11,7 +11,7 @@ $(document).ready(function () {
             $('.actual-row').removeClass("shown-row");
             $('.actual-row').addClass("hidden-row");
 
-            var dataid = parentrow.attr("data-id");
+            var dataid = parentrow.attr("data-level");
             
             actualrow.removeClass("shown-row");
             actualrow.addClass("hidden-row");
@@ -34,13 +34,13 @@ $(document).ready(function () {
             if ($(".browse-container-header").hasClass("browse-header-extended") == false) {
 
                 $(".browse-container-header").addClass("browse-header-extended");
-                $(".browse-container-header h2").html("<span><a class='browse-cat-switch' data-id='"+dataid+"'>" + categoryName + "</a></span>");
+                $(".browse-container-header h2").html("<span><a class='browse-cat-switch' data-level='"+dataid+"'>" + categoryName + "</a></span>");
 
             } else {
 
                 $(".browse-container-header").addClass("browse-header-extended");
                 var current = $(".browse-container-header h2").html();
-                $(".browse-container-header h2").html(current  + "<span><a class='browse-cat-switch' data-id='"+dataid+"'>" + categoryName + "</a></span>")
+                $(".browse-container-header h2").html(current  + "<span><a class='browse-cat-switch' data-level='"+dataid+"'>" + categoryName + "</a></span>")
             }
 
         }
@@ -56,7 +56,7 @@ $(document).ready(function () {
 
     $('body').on('click', '.browse-cat-switch', function(e) {
 
-        var id = $(this).attr("data-id");
+        var id = $(this).attr("data-level");
         id = parseInt(id) + 1;
 
         var html = "<span>" + this.outerHTML + "</span>";
@@ -68,10 +68,10 @@ $(document).ready(function () {
         $('.sub-rows').removeClass("shown-row");
         $('.sub-rows').addClass("hidden-row");
 
-        $('*[data-id="'+id+'"]').parents(".sub-rows").removeClass("hidden-row");
-        $('*[data-id="'+id+'"]').parents(".sub-rows").addClass("shown-row");
-        $('*[data-id="'+id+'"]').children(".actual-row").removeClass("hidden-row");
-        $('*[data-id="'+id+'"]').children(".actual-row").addClass("shown-row");
+        $('*[data-level="'+id+'"]').parents(".sub-rows").removeClass("hidden-row");
+        $('*[data-level="'+id+'"]').parents(".sub-rows").addClass("shown-row");
+        $('*[data-level="'+id+'"]').children(".actual-row").removeClass("hidden-row");
+        $('*[data-level="'+id+'"]').children(".actual-row").addClass("shown-row");
 
     });
 
