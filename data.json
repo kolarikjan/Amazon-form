@@ -1,0 +1,91 @@
+{
+    "0" : {
+        "name": "Automotive",
+        "sub" : {
+            "0" : {
+                "name" : "Agricultural Vehicle Parts & Equipment",
+                "sub" : {
+                    "0" : {
+                        "name" : "Agricultural Vehicle Brakes & Accessories",
+                        "sub" : {
+                            "0" : {
+                                "name" : "Agricultural Vehicle Disc Brakes",
+                                "type" : "BRAKE ROTOR"
+                            }
+                        }
+                    },
+                    "1" : {
+                        "name" : "Agricultural Vehicle Hydraulic Equipment",
+                        "sub" : {
+                            "0" : {
+                                "name" : "Agricultural Vehicle Hydraulic Hoses",
+                                "type" : "HARDWARE TUBING"
+                            }
+                        }
+                    },
+                    "2" : {
+                        "name" : "Agricultural Vehicle Lights & Bulbs",
+                        "sub" : {
+                            "0" : {
+                                "name" : "Agricultural Vehicle Brake & Tail Light Assemblies",
+                                "type" : "VEHICLE LIGHT ASSEMBLY"
+                            },
+                            "1" : {
+                                "name" : "Agricultural Vehicle Combination Lights",
+                                "type" : "VEHICLE LIGHT ASSEMBLY"
+                            },
+                            "2" : {
+                                "name" : "Agricultural Vehicle Headlight Assemblies",
+                                "type" : "VEHICLE LIGHT ASSEMBLY"
+                            },
+                            "3" : {
+                                "name" : "Agricultural Vehicle Light Bulbs",
+                                "type" : "VEHICLE LIGHT BULB"
+                            },
+                            "4" : {
+                                "name" : "Agricultural Vehicle Marker Lights",
+                                "type" : "VEHICLE LIGHT ASSEMBLY"
+                            },
+                            "5" : {
+                                "name" : "Agricultural Vehicle Side Lights",
+                                "type" : "VEHICLE LIGHT ASSEMBLY"
+                            }
+                        }
+                    },
+                    "3" : {
+                        "name" : "Agricultural Vehicle Brakes & Accessories",
+                        "sub" : {
+                            "0" : {
+                                "name" : "Agricultural Vehicle Disc Brakes",
+                                "type" : "BRAKE ROTOR"
+                            }
+                        }
+                    }
+                }
+            },
+            "1" : {
+                "name" : "Agricultural Vehicle Parts & Equipment",
+                "sub" : {
+                    "0" : {
+                        "name" : "Agricultural Vehicle Disc Brakes",
+                        "type" : "BRAKE ROTOR"
+                    }
+                }
+            }
+        }
+    },
+    "1" : {
+        "name": "Automotive",
+        "sub" : {
+            "0" : {
+                "name" : "Agricultural Vehicle Parts & Equipment",
+                "sub" : {
+                    "0" : {
+                        "name" : "Agricultural Vehicle Disc Brakes",
+                        "type" : "BRAKE ROTOR"
+                    }
+                }
+            }
+        }
+    }
+}

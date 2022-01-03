@@ -51,6 +51,9 @@ $(document).ready(function () {
 
         e.preventDefault();
         $('.form-browse').load(document.URL +  '  .form-browse');
+        setTimeout(() => {
+            getContent();
+        }, 100); 
 
     });
 
@@ -74,5 +77,48 @@ $(document).ready(function () {
         $('*[data-level="'+id+'"]').children(".actual-row").addClass("shown-row");
 
     });
+    
+    function getCategories (data, finished, level) {
 
+        if (finished == true) {
+            return;
+        }
+        level = level + 1;
+        if (typeof data === "object") {
+            let num = 0;
+            for(var k in data) {
+                console.log(k);
+                if (data[k].hasOwnProperty("type")) {
+                    dataOut += '<div class="sub-rows hidden-row"><div class="browse-row single-row" data-level="'+level+'"><div class="actual-row"><div class="favorite"><img src="img/star.png" alt="star"></div><div class="browse-row-inner"><div class="browse-row-info"><h3 class="browse-row-name">'+data[k]["name"]+'</h3><div class="browse-row-product-type"><div class="browse-row-product-type-label">Product type:</div><div class="browse-row-product-type-value">'+data[k]["type"]+'</div></div></div><div class="action-group"><a href="#">Select</a></div></div></div></div></div>';
+                    if (num == data.lenght) {
+                        levelBefore = level;
+                        return;
+                    }
+                } else {
+                    if (level != 1) {
+                        dataOut += '<div class="sub-rows hidden-row"><div class="browse-row parent-row" data-level="'+level+'"><div class="actual-row clickable-row"><div class="favorite"><img src="img/star.png" alt="star"></div><div class="browse-row-inner"><div class="browse-row-info"><h3 class="browse-row-name">'+data[k]["name"]+'</h3></div><div class="action-group"><img src="img/browse-arrow.png" alt="browse arrow" class="browse-btn-next-cat"></div></div>';
+                    } else {
+                        dataOut += '<div class="browse-row parent-row" data-level="'+level+'"><div class="actual-row clickable-row"><div class="favorite"><img src="img/star.png" alt="star"></div><div class="browse-row-inner"><div class="browse-row-info"><h3 class="browse-row-name">'+data[k]["name"]+'</h3></div><div class="action-group"><img src="img/browse-arrow.png" alt="browse arrow" class="browse-btn-next-cat"></div></div></div>';
+                    }
+                    getCategories(data[k]["sub"],finished, level);
+                }
+                num++;
+            }
+        } else {
+            console.log(data);
+            finished = true;
+        }
+
+    }
+    function getContent() {
+        window.dataOut = "";
+        window.levelBefore = 1;
+        $.getJSON("data.json", function(json) {
+            var finished = false;
+            getCategories(json, finished, 0);
+            dataOut += "</div>";
+            $(".browse-content").html(dataOut);
+        });
+    }
+    getContent();
 });
