@@ -63,15 +63,17 @@ $(document).ready(function () {
         var newHeader = $(".browse-container-header h2").html().split(html,1);
         $(".browse-container-header h2").html(newHeader + html);
 
+        var currentState = $('.shown-row [data-level="'+id+'"]');
+
         $('.actual-row').removeClass("shown-row");
         $('.actual-row').addClass("hidden-row");
         $('.sub-rows').removeClass("shown-row");
         $('.sub-rows').addClass("hidden-row");
 
-        $('*[data-level="'+id+'"]').parents(".sub-rows").removeClass("hidden-row");
-        $('*[data-level="'+id+'"]').parents(".sub-rows").addClass("shown-row");
-        $('*[data-level="'+id+'"]').children(".actual-row").removeClass("hidden-row");
-        $('*[data-level="'+id+'"]').children(".actual-row").addClass("shown-row");
+        currentState.parents(".sub-rows").removeClass("hidden-row");
+        currentState.parents(".sub-rows").addClass("shown-row");
+        currentState.children(".actual-row").removeClass("hidden-row");
+        currentState.children(".actual-row").addClass("shown-row");
 
     });
 });
